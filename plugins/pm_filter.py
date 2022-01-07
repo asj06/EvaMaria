@@ -90,8 +90,12 @@ async def next_page(bot, query):
         btn.append(
             [InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"), InlineKeyboardButton(f"📃 Pages {round(int(offset)/10)+1} / {round(total/10)}", callback_data="pages")]
         )
+        btn.append(
+            [InlineKeyboardButton("♻️ SF Lɪɴᴋs ♻️", url="https://t.me/sflinks")])
     elif off_set is None:
         btn.append([InlineKeyboardButton(f"🗓 {round(int(offset)/10)+1} / {round(total/10)}", callback_data="pages"), InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
+        btn.append(
+            [InlineKeyboardButton("♻️ SF Lɪɴᴋs ♻️", url="https://t.me/sflinks")]) 
     else:
         btn.append(
             [
@@ -100,6 +104,8 @@ async def next_page(bot, query):
                 InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
+        btn.append(
+            [InlineKeyboardButton("♻️ SF Lɪɴᴋs ♻️", url="https://t.me/sflinks")])
     try:
         await query.edit_message_reply_markup( 
             reply_markup=InlineKeyboardMarkup(btn)
@@ -358,7 +364,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     chat_id=query.from_user.id,
                     file_id=file_id,
                     caption=f_caption
-                    )
+                    reply_markup=InlineKeyboardMarkup(
+                        [[InlineKeyboardButton('🌿 Jᴏɪɴ Cʜᴀɴɴᴇʟ 🌿', url="https://telegram.me/StreamingFreaks")],[
+                            InlineKeyboardButton('🔥 Oᴜʀ Gʀᴏᴜᴘ 🔥', url="https://telegram.me/SF_Request")
+                         ]]
+                     )
+                     )
                 await query.answer('Check PM, I have sent files in pm',show_alert = True)
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !',show_alert = True)
@@ -392,20 +403,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.from_user.id,
             file_id=file_id,
             caption=f_caption
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton('🌿 Jᴏɪɴ Cʜᴀɴɴᴇʟ 🌿', url="https://telegram.me/StreamingFreaks")],[
+                    InlineKeyboardButton('🔥 Oᴜʀ Gʀᴏᴜᴘ 🔥', url="https://telegram.me/SF_Request")
+                  ]]
+            )
             )
 
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('🎭 Mʏ Gʀᴏᴜᴘ 🎭', url=f'http://t.me/sf_request'),
+            InlineKeyboardButton('☘️ Mʏ Cʜᴀɴɴᴇʟ ☘️', url='https://t.me/StreamingFreaks')
+           ],[
+            InlineKeyboardButton('☀️ Jᴏɪɴ Tʜɪs Cʜᴀɴɴᴇʟ ᴛᴏ Usᴇ Mᴇ ☀️', url='https://t.me/SFLinks')
             ],[
-            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/StreamingFreaks')
-            ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
-        ]]
+            InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ Hᴇʀᴇ 🔍', switch_inline_query_current_chat='')]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
