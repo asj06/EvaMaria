@@ -21,7 +21,7 @@ async def start(client, message):
                 InlineKeyboardButton('🤖 Updates', url='https://t.me/StreamingFreaks')
             ],
             [
-                InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
+                InlineKeyboardButton('ℹ️ Help', url='https://t.me/sf_spiddy'),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -40,7 +40,7 @@ async def start(client, message):
             InlineKeyboardButton('🎭 Mʏ Gʀᴏᴜᴘ 🎭', url=f'http://t.me/sf_request'),
             InlineKeyboardButton('☘️ Mʏ Cʜᴀɴɴᴇʟ ☘️', url='https://t.me/StreamingFreaks')
            ],[
-            InlineKeyboardButton('☀️ Jᴏɪɴ Tʜɪs Cʜᴀɴɴᴇʟ ᴛᴏ Usᴇ Mᴇ ☀️', url='https://t.me/SF_Links')
+            InlineKeyboardButton('☀️ Jᴏɪɴ Tʜɪs Cʜᴀɴɴᴇʟ ᴛᴏ Usᴇ Mᴇ ☀️', url='https://t.me/SFLinks')
             ],[
             InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ Hᴇʀᴇ 🔍', switch_inline_query_current_chat='')]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -79,7 +79,7 @@ async def start(client, message):
             InlineKeyboardButton('🎭 Mʏ Gʀᴏᴜᴘ 🎭', url=f'http://t.me/sf_request'),
             InlineKeyboardButton('☘️ Mʏ Cʜᴀɴɴᴇʟ ☘️', url='https://t.me/StreamingFreaks')
            ],[
-            InlineKeyboardButton('☀️ Jᴏɪɴ Tʜɪs Cʜᴀɴɴᴇʟ ᴛᴏ Usᴇ Mᴇ ☀️', url='https://t.me/SF_Links')
+            InlineKeyboardButton('☀️ Jᴏɪɴ Tʜɪs Cʜᴀɴɴᴇʟ ᴛᴏ Usᴇ Mᴇ ☀️', url='https://t.me/SFLinks')
             ],[
             InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ Hᴇʀᴇ 🔍', switch_inline_query_current_chat='')]]
         reply_markup = InlineKeyboardMarkup(buttons)
