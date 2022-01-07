@@ -369,13 +369,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     chat_id=query.from_user.id,
                     file_id=file_id,
                     caption=f_caption
-                    reply_markup=InlineKeyboardMarkup([
-                    [
-                        InlineKeyboardButton('More Bots', url='https://t.me/subin_works/122'),
-                        InlineKeyboardButton('Update Channel', url='https://t.me/subin_works')
-                    ]
-                    ])
-                    )
+                    reply_markup=InlineKeyboardMarkup(
+                        [[InlineKeyboardButton('🌿 Jᴏɪɴ Cʜᴀɴɴᴇʟ 🌿', url="https://telegram.me/StreamingFreaks")],[
+                        InlineKeyboardButton('⚜ Oᴜʀ Gʀᴏᴜᴘ ⚜', url="https://telegram.me/SF_Request")
+                         ]]
+                   )
+                   )
                 await query.answer('Check PM, I have sent files in pm',show_alert = True)
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !',show_alert = True)
