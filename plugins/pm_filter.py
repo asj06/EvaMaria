@@ -370,11 +370,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     chat_id=query.from_user.id,
                     file_id=file_id,
                     caption=f_caption
-                   )
-                buttons.append([
+                   
+                    buttons.append([
                            InlineKeyboardButton('ᴍʏ ʙᴏss 😎', url='https://t.me/amogh_06'),
                                InlineKeyboardButton('Jᴏɪɴ Gʀᴏᴜᴘ 😈', url='https://t.me/StreamingFreaks')
                       ])
+                )
                 await query.answer('Check PM, I have sent files in pm',show_alert = True)
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !',show_alert = True)
