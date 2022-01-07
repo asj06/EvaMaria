@@ -369,7 +369,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     chat_id=query.from_user.id,
                     file_id=file_id,
                     caption=f_caption
-                    reply_markup=InlineKeyboardMarkup(buttons)
+                    reply_markup=InlineKeyboardMarkup([
+                    [
+                        InlineKeyboardButton('More Bots', url='https://t.me/subin_works/122'),
+                        InlineKeyboardButton('Update Channel', url='https://t.me/subin_works')
+                    ]
+                    ])
                     )
                 await query.answer('Check PM, I have sent files in pm',show_alert = True)
         except UserIsBlocked:
