@@ -341,7 +341,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if not files_:
             return await query.answer('No such file exist.')
         files = files_[0]
-        reply_markup=reply_markup
+        reply_markup = get_reply_markup(query=string)
         title = files.file_name
         button = [
          [
