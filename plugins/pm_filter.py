@@ -341,7 +341,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if not files_:
             return await query.answer('No such file exist.')
         files = files_[0]
-        reply_markup = get_reply_markup(query=string)
+       ''' reply_markup = get_reply_markup(query=string)'''
         title = files.file_name
         button = [
          [
@@ -372,7 +372,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     chat_id=query.from_user.id,
                     file_id=file_id,
                     caption=f_caption,
-                    reply_markup=InlineKeyboardMarkup(button)
+                    reply_markup=InlineKeyboardMarkup(
+                    [[InlineKeyboardButton('🌿 Jᴏɪɴ Cʜᴀɴɴᴇʟ 🌿', url="https://telegram.me/StreamingFreaks")],[
+                        InlineKeyboardButton('🔥 Oᴜʀ Gʀᴏᴜᴘ 🔥', url="https://telegram.me/SF_Request")
+                     ]]
+                )
                 )
                 await query.answer('Check PM, I have sent files in pm',show_alert = True)
         except UserIsBlocked:
