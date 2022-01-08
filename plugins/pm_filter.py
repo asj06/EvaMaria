@@ -724,6 +724,15 @@ async def advantage_spell_chok(msg):
     await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?", reply_markup=InlineKeyboardMarkup(btn))
     
 
+def get_reply_markup(query):
+    buttons = [
+        [
+            InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ Aɢᴀɪɴ 🔎', switch_inline_query_current_chat=query)
+        ],[
+            InlineKeyboardButton('🔥 Oᴜʀ Gʀᴏᴜᴘ 🔥', url="https://telegram.me/SF_Request")
+        ]]
+    return InlineKeyboardMarkup(buttons)
+
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
     name = text or message.text
@@ -771,3 +780,4 @@ async def manual_filters(client, message, text=False):
                 break
     else:
         return False
+      
